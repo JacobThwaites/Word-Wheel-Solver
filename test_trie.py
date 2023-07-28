@@ -18,12 +18,12 @@ class TestTrie(unittest.TestCase):
 
     def test_can_return_list_of_all_words_added(self):
         trie = Trie()
-        trie.add('asdf')
+        trie.add('ab')
         trie.add('a')
         trie.add('b')
-        
+
         words_added = trie.get_all_words()
-        self.assertEqual(['a', 'asdf', 'b'], words_added)
+        self.assertEqual(['a', 'ab', 'b'], words_added)
 
 if __name__ == '__main__':
     unittest.main()
