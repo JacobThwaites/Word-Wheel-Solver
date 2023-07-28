@@ -36,10 +36,10 @@ class TestCorpusAdder(unittest.TestCase):
     
     def test_can_add_unique_words_from_untagged_corpus_from_file_to_solver(self):
         corpus_adder = CorpusAdder()
-        tags = ['a', 'ab', 'a']
+        words = ['a', 'ab', 'a']
         with open(self.file_path, 'w') as file:
-            for tag in tags:
-                file.write(tag + '\n')
+            for word in words:
+                file.write(word + '\n')
 
         solver = WordWheelSolver()
         corpus_adder.add_corpus_from_file(self.file_path, solver)
