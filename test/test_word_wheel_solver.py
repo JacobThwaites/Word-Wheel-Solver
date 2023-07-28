@@ -21,7 +21,7 @@ class TestWordWheelSolver(unittest.TestCase):
         word_wheel_solver = WordWheelSolver()
         corpus_adder = CorpusAdder()
         dictionary = [('abcd','NN'), ('bcde','NN'), ('z','NN')]
-        corpus_adder.add_corpus_to_solver(dictionary, word_wheel_solver)
+        corpus_adder.add_tagged_corpus_to_solver(dictionary, word_wheel_solver)
         solution = word_wheel_solver.solve('b', 'acde')
 
         self.assertEqual(2, len(solution))
@@ -32,7 +32,7 @@ class TestWordWheelSolver(unittest.TestCase):
         word_wheel_solver = WordWheelSolver()
         corpus_adder = CorpusAdder()
         dictionary = [('abcd','NN'), ('bcde','NN'), ('z','NN')]
-        corpus_adder.add_corpus_to_solver(dictionary, word_wheel_solver)
+        corpus_adder.add_tagged_corpus_to_solver(dictionary, word_wheel_solver)
         solution = word_wheel_solver.solve('b', 'acdea')
         self.assertEqual(2, len(solution))
         self.assertIn('abcd', solution)

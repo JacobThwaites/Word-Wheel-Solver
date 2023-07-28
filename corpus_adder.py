@@ -7,7 +7,7 @@ class CorpusAdder():
     def __init__(self, excluded_tags=[]):
         self.excluded_tags = excluded_tags
 
-    def add_corpus_to_solver(self, corpus: List[tuple], solver: WordWheelSolver): 
+    def add_tagged_corpus_to_solver(self, corpus: List[tuple], solver: WordWheelSolver): 
         for word_tag_pair in corpus:
             tag = word_tag_pair[1]
             if tag not in self.excluded_tags:

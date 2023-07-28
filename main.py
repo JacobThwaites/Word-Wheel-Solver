@@ -8,7 +8,7 @@ def main():
     excluded_tags = get_excluded_tags()
     corpus_adder = CorpusAdder(excluded_tags)
     corpus = brown.tagged_words()
-    corpus_adder.add_corpus_to_solver(corpus, word_wheel_solver)
+    corpus_adder.add_tagged_corpus_to_solver(corpus, word_wheel_solver)
 
     test_solution = word_wheel_solver.solve('e', 'fhiiorrd')
     print(test_solution)
