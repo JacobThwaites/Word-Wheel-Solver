@@ -27,7 +27,6 @@ class WordWheelSolver():
         for i, char in enumerate(remaining_letters):
             if char in dictionary_pointer: 
                 current_word += char
-                print(current_word)
                 if self.word_validator.is_word_valid(current_word):
                     self.solutions.append(current_word)
 
