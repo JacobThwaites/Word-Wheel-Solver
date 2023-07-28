@@ -27,6 +27,17 @@ class TestWordWheelSolver(unittest.TestCase):
         self.assertEqual(2, len(solution))
         self.assertIn('abcd', solution)
         self.assertIn('bcde', solution)
+    
+    def test_returned_solutions_are_all_unique(self):
+        word_wheel_solver = WordWheelSolver()
+        corpus_adder = CorpusAdder()
+        dictionary = [('abcd','NN'), ('bcde','NN'), ('z','NN')]
+        corpus_adder.add_corpus_to_solver(dictionary, word_wheel_solver)
+        solution = word_wheel_solver.solve('b', 'acdea')
+        self.assertEqual(2, len(solution))
+        self.assertIn('abcd', solution)
+        self.assertIn('bcde', solution)
+
 
 if __name__ == '__main__':
     unittest.main()

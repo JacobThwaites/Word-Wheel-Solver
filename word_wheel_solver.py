@@ -6,6 +6,7 @@ class WordWheelSolver():
     def __init__(self):
         self.trie = Trie()
         self.word_validator = None
+        self.solutions = []
         pass
 
     def get_words_in_dictionary(self) -> List[str]:
@@ -20,6 +21,7 @@ class WordWheelSolver():
 
         self.solutions = []
         self.__get_solutions('', self.trie.dictionary, [char for char in all_letters])
+        self.__remove_duplicates_from_solution()
         return self.solutions
     
     
@@ -36,3 +38,6 @@ class WordWheelSolver():
     
     def __is_valid_word(self, word: str, dictionary_pointer) -> bool:
         return self.word_validator.is_word_valid(word) and '#' in dictionary_pointer[word[-1]]
+    
+    def __remove_duplicates_from_solution(self):
+        self.solutions = [x for i, x in enumerate(self.solutions) if x not in self.solutions[:i]]
