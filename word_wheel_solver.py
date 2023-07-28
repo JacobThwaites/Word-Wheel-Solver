@@ -11,3 +11,6 @@ class WordWheelSolver():
     
     def add_word_to_dictionary(self, word: str):
         self.dictionary.add(word)
+    
+    def solve(self, hub_letter: str, outer_letters: List[str]) -> List[str]:
+        return []
