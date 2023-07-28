@@ -14,6 +14,9 @@ def get_excluded_tags() -> List[str]:
     DASH_TAG = '--'
     COMMA_TAG = ','
     COLON_TAG = ':'
+    END_TAG = '.'
+    SINGLE_QUOTES_TAG = "''"
+    BACK_TICKS_TAG = '``'
 
 
     return [
@@ -29,5 +32,8 @@ def get_excluded_tags() -> List[str]:
         NOT_TAG,
         DASH_TAG,
         COMMA_TAG,
-        COLON_TAG
+        COLON_TAG,
+        END_TAG,
+        SINGLE_QUOTES_TAG,
+        BACK_TICKS_TAG
     ]
