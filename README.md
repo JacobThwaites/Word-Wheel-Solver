@@ -3,7 +3,7 @@
 A project designed to find as many solutions as possible for a word wheel puzzle
 
 
-# Puzzle Definition
+## Puzzle Definition
 A word wheel puzzle has 8 outer letters and 1 hub letter. 
 A player must find as many words as possible.
 Each word must use the hub wheel and at least 3 other letters, and letters can only be used once.
