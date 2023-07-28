@@ -1,6 +1,7 @@
 import unittest
-from corpus_adder import CorpusAdder
 import os
+from corpus_adder import CorpusAdder
+from word_wheel_solver import WordWheelSolver
 
 class TestCorpusAdder(unittest.TestCase):
     def setUp(self):
@@ -42,7 +43,12 @@ class TestCorpusAdder(unittest.TestCase):
         excluded_tags = ['a', 'b']
         corpus_adder = CorpusAdder(excluded_tags)
         test_corpus = [('test','nn'), ('should_not_appear','a'), ('also_should_not_appear','b')]
-        valid_unique_words = corpus_adder.get_valid_unique_words(test_corpus)
+        solver = WordWheelSolver()
+        corpus_adder.add_corpus_to_solver(test_corpus, solver)
+
+        dictionary = solver.get_words_in_dictionary()
+        self.assertEqual(1, len(dictionary))
+        self.assertEqual('test', dictionary[0])
 
 if __name__ == '__main__':
     unittest.main()
