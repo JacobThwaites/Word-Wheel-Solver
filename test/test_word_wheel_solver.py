@@ -3,12 +3,12 @@ from word_wheel_solver import WordWheelSolver
 from corpus_adder import CorpusAdder
 
 class TestWordWheelSolver(unittest.TestCase):
-    def test_starts_with_an_empty_dictionary_of_words(self):
+    def test_starts_with_empty_dictionary_of_words(self):
         word_wheel_solver = WordWheelSolver()
         dictionary = word_wheel_solver.get_words_in_dictionary()
         self.assertEqual(0, len(dictionary))
     
-    def test_can_add_a_word_to_dictionary(self):
+    def test_can_add_word_to_dictionary(self):
         word_wheel_solver = WordWheelSolver()
         word = 'asdf'
         word_wheel_solver.add_word_to_dictionary(word)
@@ -33,7 +33,7 @@ class TestWordWheelSolver(unittest.TestCase):
         corpus_adder = CorpusAdder()
         dictionary = [('abcd','NN'), ('bcde','NN'), ('z','NN')]
         corpus_adder.add_tagged_corpus_to_solver(dictionary, word_wheel_solver)
-        solution = word_wheel_solver.solve('b', 'acdea')
+        solution = word_wheel_solver.solve('b', 'aaacde')
         self.assertEqual(2, len(solution))
         self.assertIn('abcd', solution)
         self.assertIn('bcde', solution)
