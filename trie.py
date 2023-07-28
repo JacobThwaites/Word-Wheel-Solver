@@ -7,9 +7,9 @@ class Trie:
     def add(self, word: str):
         pointer = self.dictionary
         for char in word:
-            if char not in pointer:
-                pointer[char] = {}
-            pointer = pointer[char]
+            if char.lower() not in pointer:
+                pointer[char.lower()] = {}
+            pointer = pointer[char.lower()]
         
         self.__mark_word_end(pointer)
     
