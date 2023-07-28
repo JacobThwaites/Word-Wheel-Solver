@@ -13,6 +13,13 @@ class CorpusAdder():
             if tag not in self.excluded_tags:
                 solver.add_word_to_dictionary(word_tag_pair[0])
 
+    def add_corpus_from_file(self, file_path: str, solver: WordWheelSolver):
+        with open(file_path, 'r') as file:
+            lines = file.readlines()
+            for line in lines:
+                line = line.replace('\n', '')
+                solver.add_word_to_dictionary(line)
+
     def write_unique_words_to_file(self, file_path: str, corpus: List[tuple]): 
         with open(file_path, 'w') as file:
             for word_tag_pair in corpus:

@@ -23,7 +23,7 @@ class TestCorpusAdder(unittest.TestCase):
             first_line = file.readline().strip()
             self.assertEqual(eval(first_line), ('test', 'nn'))
 
-    def test_can_add_valid_unique_words_from_corpus_to_solver(self):
+    def test_can_add_valid_unique_words_from_tagged_corpus_to_solver(self):
         excluded_tags = ['a', 'b']
         corpus_adder = CorpusAdder(excluded_tags)
         test_corpus = [('test','nn'), ('should_not_appear','a'), ('also_should_not_appear','b')]
@@ -33,6 +33,21 @@ class TestCorpusAdder(unittest.TestCase):
         dictionary = solver.get_words_in_dictionary()
         self.assertEqual(1, len(dictionary))
         self.assertEqual('test', dictionary[0])
+    
+    def test_can_add_unique_words_from_untagged_corpus_from_file_to_solver(self):
+        corpus_adder = CorpusAdder()
+        tags = ['a', 'ab', 'a']
+        with open(self.file_path, 'w') as file:
+            for tag in tags:
+                file.write(tag + '\n')
+
+        solver = WordWheelSolver()
+        corpus_adder.add_corpus_from_file(self.file_path, solver)
+
+        dictionary = solver.get_words_in_dictionary()
+        self.assertEqual(2, len(dictionary))
+        self.assertEqual('a', dictionary[0])
+        self.assertEqual('ab', dictionary[1])
 
 if __name__ == '__main__':
     unittest.main()

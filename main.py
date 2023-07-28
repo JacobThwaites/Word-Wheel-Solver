@@ -12,7 +12,6 @@ def main():
 
     test_solution = word_wheel_solver.solve('e', 'fhiiorrd')
     print(test_solution)
-    pass
 
 if __name__ == '__main__':
     main()

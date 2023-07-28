@@ -9,4 +9,4 @@ A player must find as many words as possible.
 Each word must use the hub wheel and at least 3 other letters, and letters can only be used once.
 You can't use plurals, foreign words or proper nouns. 
 Verb endings with 's' are permitted.
-There is always 1 9-letter word.
+Each puzzle contains a single 9-letter word.
