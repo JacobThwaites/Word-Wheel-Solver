@@ -27,9 +27,12 @@ class WordWheelSolver():
         for i, char in enumerate(remaining_letters):
             if char in dictionary_pointer: 
                 current_word += char
-                if self.word_validator.is_word_valid(current_word):
+                if self.__is_valid_word(current_word, dictionary_pointer):
                     self.solutions.append(current_word)
 
                 new_remaining_letters = remaining_letters[:i]+ remaining_letters[i+1:]
                 self.__get_solutions(current_word, dictionary_pointer[char], new_remaining_letters)
                 current_word = current_word[:-1]
+    
+    def __is_valid_word(self, word: str, dictionary_pointer) -> bool:
+        return self.word_validator.is_word_valid(word) and '#' in dictionary_pointer[word[-1]]
