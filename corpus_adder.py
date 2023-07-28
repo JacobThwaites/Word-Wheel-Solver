@@ -1,6 +1,4 @@
 from typing import List
-from nltk.corpus import brown
-from excluded_tags import get_excluded_tags
 from word_wheel_solver import WordWheelSolver
 
 class CorpusAdder():
