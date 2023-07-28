@@ -16,7 +16,7 @@ class WordWheelSolver():
         self.trie.add(word)
     
     def solve(self, hub_letter: str, outer_letters: str) -> List[str]:
-        self.word_validator = WordValidator(hub_letter, outer_letters)
+        self.word_validator = WordValidator(hub_letter)
         all_letters = hub_letter + outer_letters
 
         self.solutions = []
