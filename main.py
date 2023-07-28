@@ -15,8 +15,10 @@ def main():
     # Solve using Scrabble dictionary
     # corpus_adder = CorpusAdder()
     # corpus_adder.add_corpus_from_file('scrabble_dictionary.txt', word_wheel_solver)
-    
-    test_solution = word_wheel_solver.solve('c', 'farnagre')
+
+    hub_letter = 'c'
+    outer_letters = 'farnagre'
+    test_solution = word_wheel_solver.solve(hub_letter, outer_letters)
     print(test_solution)
 
 if __name__ == '__main__':
