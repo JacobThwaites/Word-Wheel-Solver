@@ -26,9 +26,3 @@ class CorpusAdder():
                 tag = word_tag_pair[1]
                 if tag not in self.excluded_tags:
                     file.write(str(word_tag_pair) + '\n')
-
-if __name__ == '__main__':
-    excluded_tags = get_excluded_tags()
-    corpus_adder = CorpusAdder(excluded_tags)
-    corpus = brown.tagged_words()
-    corpus_adder.write_unique_words_to_file('brown.txt', corpus)
