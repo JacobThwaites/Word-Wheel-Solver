@@ -24,7 +24,7 @@ The project can be run locally using the terminal command:
 $ python3 main.py
 ```
 
-You can modify the hub letter and outer letters inside the main function to change the puzzle. 
+You will then be prompted to input the hub letter and outer letters through the CLI.
  
 <br />
 
