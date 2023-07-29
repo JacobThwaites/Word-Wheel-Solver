@@ -25,5 +25,17 @@ class TestTrie(unittest.TestCase):
         words_added = trie.get_all_words()
         self.assertEqual(['a', 'ab', 'b'], words_added)
 
+    def test_ignores_letter_case_when_adding_letters(self):
+        trie = Trie()
+        trie.add('a')
+        
+        words_added = trie.get_all_words()
+        self.assertEqual(1, len(words_added))
+
+        trie.add('A')
+
+        words_added = trie.get_all_words()
+        self.assertEqual(1, len(words_added))
+
 if __name__ == '__main__':
     unittest.main()
